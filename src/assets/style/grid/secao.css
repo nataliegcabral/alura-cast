@@ -13,23 +13,34 @@
 }
 
 .secao__cartoes {
+    
     display: grid;
+    row-gap: 1rem;
+    --gap-coluna: 1.25rem;
+    column-gap: var(--gap-coluna);
+    --gap-proporcional: var(--gap-coluna) * (var(--quantidade-maxima-colunas) - 1) / var(--quantidade-maxima-colunas);
 
-    /*largura mínima da coluna*/
-    --largura-minina-coluna: 100%/2;
 
-    /*largura máxima da coluna*/
+    /* largura mínima da coluna */
+     --largura-minima-coluna: 100%/2 - var(--gap-proporcional);
+
+
+    /* largura máxima da coluna */
     --max-largura-maxima-coluna: 100%/var(--quantidade-maxima-colunas);
-    --largura-maxima-coluna: max(var(--min-largura-maxima-coluna), var(--max-largura-maxima-coluna));
+    --largura-maxima-coluna: max(var(--min-largura-maxima-coluna), var(--max-largura-maxima-coluna) - var(--gap-proporcional));
 
     --minimo: min(var(--largura-minima-coluna), var(--largura-maxima-coluna));
 
-    grid-template-columns: repeat(auto-fit, minmax(var(--minimo), 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(var(--minimo), 1fr)); 
+
 }
 
 .secao-horizontal .secao__cartoes {
     --quantidade-maxima-colunas: 3;
     --min-largura-maxima-coluna: 348px;
+    /* --quantidade-maxima-colunas: 3;
+    --min-largura-maxima-coluna: 348px; */
+
     /*display: grid;
     grid-template-columns: repeat(auto-fit, minmax(min(100%/2, max(348px, 100%/3)), 1fr));
     gap: 0.5rem 1rem;*/
@@ -37,8 +48,11 @@
 
 .secao-vertical .secao__cartoes {
     grid-column: 1/3;
+    /* --quantidade-maxima-colunas: 6;
+    --min-largura-maxima-coluna: 165px; */
     --quantidade-maxima-colunas: 6;
     --min-largura-maxima-coluna: 165px;
+
     /*display: grid;
     grid-template-columns: repeat(auto-fit, minmax(min(100%/2, max(165px, 100%/6)), 1fr));
     gap: 1rem;*/
