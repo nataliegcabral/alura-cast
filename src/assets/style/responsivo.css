@@ -24,6 +24,10 @@
         --gap-coluna: 1rem;
     }
 
+    .secao-vertical .secao__cartoes .cartao {
+        padding: 10px;
+    }
+
     .secao-horizontal .cartao {
         column-gap: 0.5rem;
     }
@@ -40,7 +44,7 @@
     }
 
     .secao-vertical .cartao {
-        background-color: transparent;
+        background-color: var(--cinza);
         padding: 0;
     }
 
