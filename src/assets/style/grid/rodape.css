@@ -1,7 +1,6 @@
 .rodape {
     display: grid;
     grid-template-rows: repeat(2, 50%);
-    /*                       1   2   3    4    5    6    7   8    9   10  11  12*/
     grid-template-columns: auto 2fr auto 1fr repeat(3, auto) 1fr auto 1.5fr repeat(2, auto);
     column-gap: 0.5rem;
     align-items: center;
