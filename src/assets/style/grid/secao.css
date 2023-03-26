@@ -7,12 +7,6 @@
     grid-template-rows: 120px auto;
 }
 
-.secao-horizontal .secao__cartoes {
-    /*display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(100%/2, max(348px, 100%/3)), 1fr));
-    gap: 0.5rem 1rem;*/
-}
-
 .secao-vertical {
     grid-template-columns: 1fr auto;
     grid-template-rows: 1fr 2fr;
@@ -22,18 +16,29 @@
     display: grid;
 
     /*largura mínima da coluna*/
-    --min-width-column: 100%/2;
+    --largura-minina-coluna: 100%/2;
 
     /*largura máxima da coluna*/
-    --max-width-column-max: 100%/var(--max-quantity-column);
-    --max-width-column: max(var(--min-width-max-column));
+    --max-largura-maxima-coluna: 100%/var(--quantidade-maxima-colunas);
+    --largura-maxima-coluna: max(var(--min-largura-maxima-coluna), var(--max-largura-maxima-coluna));
 
+    --minimo: min(var(--largura-minima-coluna), var(--largura-maxima-coluna));
 
+    grid-template-columns: repeat(auto-fit, minmax(var(--minimo), 1fr));
+}
+
+.secao-horizontal .secao__cartoes {
+    --quantidade-maxima-colunas: 3;
+    --min-largura-maxima-coluna: 348px;
+    /*display: grid;
     grid-template-columns: repeat(auto-fit, minmax(min(100%/2, max(348px, 100%/3)), 1fr));
+    gap: 0.5rem 1rem;*/
 }
 
 .secao-vertical .secao__cartoes {
     grid-column: 1/3;
+    --quantidade-maxima-colunas: 6;
+    --min-largura-maxima-coluna: 165px;
     /*display: grid;
     grid-template-columns: repeat(auto-fit, minmax(min(100%/2, max(165px, 100%/6)), 1fr));
     gap: 1rem;*/
