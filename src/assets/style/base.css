@@ -15,12 +15,13 @@ button {
 
 /*Variaveis globais*/
 :root {
-    --azul-escuro: #041833;
-    --azul-medio: #154580;
+    --azul-escuro: #220433;
+    --azul-medio: #621286;
     --azul-degrade: linear-gradient(180deg, var(--azul-medio) 0%, var(--azul-escuro) 100%);
-    --verde: #84EEC1;
+    --verde: #71ffc4;
     --cinza: rgba(196, 196, 196, 0.2);
     --cor-textos: #ffffff;
+    --cor-textos-menu: #b6b6b6;
     --fonte-textos: 'Open Sans', sans-serif;
 }
 
@@ -40,6 +41,10 @@ body {
     
 }
 
+.principal {
+    height: 190vh;
+}
+
 
 /*Aside*/
 .menu-lateral {
@@ -50,17 +55,36 @@ body {
     width: 230px;
 }
 
+.menu-lateral__logo {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.menu-lateral__logo img {
+    width: 32px;
+}
+
+.menu-lateral__logo p {
+    font-size: 20px;
+    padding-top: 5px;
+}
+
 .menu-lateral__link::before  {
     padding-left: 1rem;
     padding-right: .5rem;
-    vertical-align: middle;
 }
 
 .menu-lateral__link {
+    color: var(--cor-textos-menu);
     font-family: var(--fonte-textos);
-    font-weight: 600;
+    font-weight: 500;
     letter-spacing: 2px;
-    margin-bottom: .5rem;
+    margin-bottom: 1.5rem;
+}
+
+.menu-lateral__link:hover {
+    color: var(--cor-textos);
 }
 
 .ativo {
@@ -69,29 +93,41 @@ body {
     padding: .75rem 0;
 }
 
-.menu-lateral__link--home::before {
-    content: url("../img/icone-home.svg");
+.menu-lateral__link--home a {
+    position: absolute;
+    top: 121px;
+    padding-left: 6px;
+
 }
 
-.menu-lateral__link--busca::before {
-    content: url("../img/icone-busca.svg");
+.menu-lateral__link--busca a {
+    position: absolute;
+    top: 182px;
+    padding-left: 6px;
 }
 
-.menu-lateral__link--biblioteca::before {
-    content: url("../img/icone-biblioteca.svg");
+.menu-lateral__link--biblioteca a {
+    position: absolute;
+    top: 230px;
+    padding-left: 6px;
+}
+
+.menu-lateral__link--playlist a {
+    position: absolute;
+    top: 362px;
+    padding-left: 6px;
+}
+
+.menu-lateral__link--salvos a {
+    position: absolute;
+    top: 412px;
+    padding-left: 6px;
 }
 
 .menu-lateral__playlist {
     text-transform: uppercase;
-    padding-left: 1rem;
-}
-
-.menu-lateral__link--playlist::before {
-    content: url("../img/icone-add_box.svg");
-}
-
-.menu-lateral__link--podcasts::before {
-    content: url("../img/icone-stars.svg");
+    font-weight: 600;
+    padding-left: 0.6rem;
 }
 
 /*Header*/
@@ -144,6 +180,7 @@ body {
 
 
 /*Seção vertical*/
+
 .secao-vertical .cartao {
     background: rgba(196, 196, 196, 0.2);
     border-radius: 10px;
