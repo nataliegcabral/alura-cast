@@ -81,6 +81,8 @@ body {
     font-weight: 500;
     letter-spacing: 2px;
     margin-bottom: 1.5rem;
+    cursor: pointer;
+    transition: all .3s;
 }
 
 .menu-lateral__link:hover {
@@ -91,6 +93,7 @@ body {
     background-color: var(--azul-medio);
     border-radius: 5px;
     padding: .75rem 0;
+    color: var(--cor-textos);
 }
 
 .menu-lateral__link--home a {
@@ -204,32 +207,30 @@ body {
     width: 100vw;
     opacity: 0.9;
 }
+
 .navbar__items {
     width: 80%;
     margin: .5rem auto;
+    color: var(--cor-textos-menu);
 }
 
 .navbar__item {
     font-size: .75rem;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    cursor: pointer;
+    transition: all .3s;
+}
+
+.navbar__item:hover {
+    color: var(--cor-textos);
 }
 
 .navbar__item::before {
     display: block;
     margin-bottom: 3px;
-}
-
-.navbar__item--home::before {
-    content: url("../img/icone-home-mb.svg");
-}
-
-.navbar__item--busca::before {
-    content: url("../img/icone-busca-mb.svg");
-
-}
-
-.navbar__item--biblioteca::before {
-    content: url("../img/icone-biblioteca-mb.svg");
 }
 
 /*rodape*/
@@ -264,7 +265,7 @@ body {
 }
 
 .barra__container--reproducao, .rodape__barra--reproducao div {
-    width: 37vw
+    width: 37vw;
 }
 
 .rodape__barra--reproducao {
